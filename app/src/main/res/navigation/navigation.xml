@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/postFragment">
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.example.simpleposts.fragment.PostFragment"
+        android:label="Post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="com.example.simpleposts.fragment.PostDetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_post_details" >
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="avatar"
+            app:argType="string" />
+        <argument
+            android:name="comments"
+            app:argType="com.example.simpleposts.model.Comments" />
+        <argument
+            android:name="picture"
+            app:argType="string" />
+    </fragment>
+</navigation>
